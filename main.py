@@ -9,7 +9,7 @@ from pathlib import Path
 
 def main():
     root = Path(__file__).parent
-    problems = sorted(root.glob("[0-9]*_*.py"))
+    problems = sorted(root.glob("h*_*.py"))
 
     if not problems:
         print("未找到题目文件")
