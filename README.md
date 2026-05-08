@@ -11,6 +11,11 @@ My personal repository for algorithm practice, covering the LeetCode Hot 100 pro
 | 3 | Longest Substring Without Repeating Characters | [3_longestsubstring.py](3_longestsubstring.py) |
 | 4 | Median of Two Sorted Arrays | [4_medianoftwosortedarrays.py](4_medianoftwosortedarrays.py) |
 | 5 | Longest Palindromic Substring | [5_longestpalindrome.py](5_longestpalindrome.py) |
+| 6 | Zigzag Conversion | [6_zigzagconversion.py](6_zigzagconversion.py) |
+| 7 | Reverse Integer | [7_reverseinteger.py](7_reverseinteger.py) |
+| 8 | String to Integer (atoi) | [8_stringtointeger.py](8_stringtointeger.py) |
+| 9 | Palindrome Number | [9_palindromenumber.py](9_palindromenumber.py) |
+| 10 | Regular Expression Matching | [10_regularexpressionmatching.py](10_regularexpressionmatching.py) |
 
 ## Running Tests
 
