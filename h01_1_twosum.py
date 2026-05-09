@@ -56,6 +56,16 @@ class Solution:
         return []                             # 题目保证有解，不会执行到这里
 
 
+    def twoSum2(self, nums: List[int], target: int) -> List[int]:
+        seen={}
+        for i,num in enumerate(nums):
+            complement = target - num
+            if complement in seen:
+                return [seen[complement], i]
+            seen[num] = i
+        return []                             # 题目保证有解，不会执行到这里
+
+
 # ========== 测试用例 ==========
 if __name__ == '__main__':
     s = Solution()

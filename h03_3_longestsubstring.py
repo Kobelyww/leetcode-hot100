@@ -27,6 +27,39 @@ LeetCode 3. 无重复字符的最长子串 (Longest Substring Without Repeating 
 
 
 class Solution:
+
+    def mysolution(self, s: str) -> int:
+        cur = []                 # 当前不重复的子串（按顺序）
+        max_len = 0
+
+        for ch in s:
+            if ch in cur:        # 重复了 → 切掉前缀（包括第一次出现的 ch）
+                idx = cur.index(ch)
+                cur = cur[idx + 1:]
+            cur.append(ch)
+            max_len = max(max_len, len(cur))
+
+        return max_len
+
+    def mysolution2(self, s: str) -> int:
+        seen = {}
+        max_len = 0
+        cur_len = 0
+        for ch in s:
+            if ch not in seen:
+                seen[ch] = cur_len
+                cur_len += 1
+                max_len = max(max_len, cur_len)
+                continue
+            else:
+                seen = {}
+                seen[ch] = cur_len
+                cur_len =0
+                cur_len += 1
+                max_len = max(cur_len, max_len)
+                continue
+        return max_len
+
     def lengthOfLongestSubstring(self, s: str) -> int:
         """
         滑动窗口 + 哈希表
@@ -54,6 +87,18 @@ class Solution:
                 left = last_index[ch] + 1
             last_index[ch] = right             # 更新字符最近一次出现位置
             max_len = max(max_len, right - left + 1)  # 更新最大窗口长度
+
+        return max_len
+
+    def mysolution3(self, s: str) -> int:
+        seen = {}
+        max_len = 0
+        left = 0
+        for right, ch in enumerate(s):
+            if ch in seen and seen[ch] >= left:
+                left = (seen[ch] + 1)
+            seen[ch] = right
+            max_len = max(max_len, right - left + 1)
 
         return max_len
 
